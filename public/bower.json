@@ -1,0 +1,9 @@
+{
+    "name": "guijs",
+    "version": "0.0.0",
+    "dependencies": {
+        "lodash": "*",
+        "jquery": "1.11.1",
+        "jeet": "*"
+    }
+}
