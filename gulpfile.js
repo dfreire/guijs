@@ -1,15 +1,22 @@
-var gulp  = require('gulp'),
-    watch = require('gulp-watch');
+var browserSync = require('browser-sync'),
+    gulp        = require('gulp'),
+    watch       = require('gulp-watch');
 
-gulp.task('html', function () {
-    gulp.src('src/**/*.html')
-        .pipe(gulp.dest('public'));
-});
-
-gulp.task('watch', function() {
-    gulp.watch('src/**/*.html', ['html']).on('change', function(event) {
-        console.log(event.path);
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: "./public/"
+        }
     });
 });
 
-gulp.task('default', ['html']);
+gulp.task('html', function () {
+    return gulp.src('src/**/*.html')
+        .pipe(gulp.dest('public'));
+});
+
+gulp.task('watch', ['browser-sync'], function () {
+    gulp.watch("src/**/*.html", ['html', browserSync.reload]);
+});
+
+gulp.task('default', [ 'html' ]);

@@ -1,8 +1,9 @@
 {
-  "name": "guijs",
-  "version": "0.0.0",
-  "devDependencies": {
-    "gulp": "*",
-    "gulp-watch": "*"
-  }
+    "name": "guijs",
+    "version": "0.0.0",
+    "devDependencies": {
+        "browser-sync": "*",
+        "gulp": "*",
+        "gulp-watch": "*"
+    }
 }
