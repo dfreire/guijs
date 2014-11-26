@@ -4,6 +4,7 @@
     "dependencies": {
         "lodash": "*",
         "react": "*",
+        "react-router": "*",
         "jeet": "*"
     }
 }
