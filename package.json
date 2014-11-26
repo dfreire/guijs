@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "devDependencies": {
     "gulp": "*",
-    "gulp-livereload": "^2.1.1",
     "gulp-watch": "*"
   }
 }
