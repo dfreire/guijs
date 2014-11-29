@@ -3,8 +3,8 @@
     "version": "0.0.0",
     "devDependencies": {
         "fb-flo": "*",
-        "browser-sync": "*",
         "gulp": "*",
+        "gulp-connect": "*",
         "gulp-watch": "*"
     }
 }

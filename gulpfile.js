@@ -1,5 +1,13 @@
-var gulp        = require('gulp'),
-    watch       = require('gulp-watch');
+var gulp    = require('gulp'),
+    connect = require('gulp-connect'),
+    watch   = require('gulp-watch');
+
+gulp.task('serve', function () {
+    connect.server({
+        port: 3000,
+        root: 'public'
+    });
+});
 
 gulp.task('html', function () {
     return gulp.src('src/**/*.html')
