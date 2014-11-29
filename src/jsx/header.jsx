@@ -1,9 +1,9 @@
 define(["bus"], function(Bus) {
-    console.log("new header", require("bus").ping())
+    console.log("new header", Bus.ping())
     var Header = React.createClass({
         render: function() {
             return (
-                <p>Header 8</p>
+                <p>Header 0</p>
             );
         }
     });
