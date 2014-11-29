@@ -1,5 +1,5 @@
 define(function(require) {
-    console.log("new header")
+    console.log("new header", require("bus").ping())
     var Header = React.createClass({
         render: function() {
             return (
@@ -8,7 +8,4 @@ define(function(require) {
         }
     });
     return Header;
-})
-
-
-
+});
