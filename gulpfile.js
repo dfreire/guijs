@@ -2,6 +2,7 @@ var gulp    = require('gulp'),
     connect = require('gulp-connect'),
     watch   = require('gulp-watch'),
     react   = require('gulp-react'),
+    cached  = require('gulp-cached'),
     flo     = require('fb-flo'),
     fs      = require('fs');
 
@@ -37,6 +38,7 @@ gulp.task('html', function () {
 
 gulp.task('jsx', function () {
     return gulp.src('src/jsx/**/*.jsx')
+        .pipe(cached('scripts')) 
         .pipe(react({ harmony: true }))
         .pipe(gulp.dest('public/js'));
 });

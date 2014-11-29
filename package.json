@@ -6,6 +6,7 @@
         "gulp": "*",
         "gulp-connect": "*",
         "gulp-watch": "*",
+        "gulp-cached": "*",
         "gulp-react": "*"
     }
 }

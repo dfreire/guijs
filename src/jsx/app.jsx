@@ -1,4 +1,4 @@
-React.render(
-    <h1>Hello!</h1>,
-    document.getElementById('root')
-);
+require(["header"], function(Header) {
+    console.log("new app")
+    React.render(Header(), document.getElementById('app'));
+});
