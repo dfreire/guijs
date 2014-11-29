@@ -1,8 +1,9 @@
 var gulp    = require('gulp'),
     connect = require('gulp-connect'),
     watch   = require('gulp-watch'),
-    flo = require('fb-flo'),
-    fs = require('fs');
+    react   = require('gulp-react'),
+    flo     = require('fb-flo'),
+    fs      = require('fs');
 
 gulp.task('serve', function () {
     var server = flo('./public/', {
@@ -34,8 +35,15 @@ gulp.task('html', function () {
         .pipe(gulp.dest('public'));
 });
 
-gulp.task('watch', ['serve'], function () {
-    gulp.watch("src/**/*.html", ['html']);
+gulp.task('jsx', function () {
+    return gulp.src('src/jsx/**/*.jsx')
+        .pipe(react({ harmony: true }))
+        .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('default', [ 'html' ]);
+gulp.task('watch', ['serve'], function () {
+    gulp.watch("src/**/*.html", ['html']);
+    gulp.watch("src/**/*.jsx",  ['jsx']);
+});
+
+gulp.task('default', [ 'html', 'jsx' ]);

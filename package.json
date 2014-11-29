@@ -5,6 +5,7 @@
         "fb-flo": "*",
         "gulp": "*",
         "gulp-connect": "*",
-        "gulp-watch": "*"
+        "gulp-watch": "*",
+        "gulp-react": "*"
     }
 }
