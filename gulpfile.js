@@ -53,7 +53,7 @@ gulp.task('jsx', function () {
         .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('watch', ['serve'], function () {
+gulp.task('watch', ['html', 'css', 'js', 'jsx', 'serve'], function () {
     gulp.watch("src/**/*.html", ['html']);
     gulp.watch("src/**/*.css",  ['css']);
     gulp.watch("src/**/*.js",   ['js']);

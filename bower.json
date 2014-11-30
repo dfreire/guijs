@@ -6,7 +6,7 @@
         "lodash": "*",
         "react": "*",
         "react-router": "*",
-        "jeet": "*"
+        "bootstrap": "*"
     }, "devDependencies": {
         "qunit": "*"
     }
