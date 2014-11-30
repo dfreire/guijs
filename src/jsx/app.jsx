@@ -3,6 +3,7 @@ require(["bus", "login"], function(Bus, Login) {
     var Route        = ReactRouter.Route;
     var RouteHandler = ReactRouter.RouteHandler;
     var DefaultRoute = ReactRouter.DefaultRoute;
+    var Redirect     = ReactRouter.Redirect;
     var Link         = ReactRouter.Link;
 
     var App = React.createClass({
@@ -17,9 +18,9 @@ require(["bus", "login"], function(Bus, Login) {
     });
 
     var routes = (
-        <Route handler={App} path="/">
+        <Route handler={App}>
             <Route name="login" handler={Login} />
-            <DefaultRoute handler={Login} />
+            <Redirect from="/" to="login" />
         </Route>
     );
 
