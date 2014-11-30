@@ -1,10 +1,11 @@
-require(["bus", "signin"], function(Bus, SignIn) {
-    var Router       = ReactRouter;
-    var Route        = ReactRouter.Route;
-    var RouteHandler = ReactRouter.RouteHandler;
-    var DefaultRoute = ReactRouter.DefaultRoute;
-    var Redirect     = ReactRouter.Redirect;
-    var Link         = ReactRouter.Link;
+require(["bus", "signin", "notfound"], function(Bus, SignIn, NotFound) {
+    var Router        = ReactRouter;
+    var Route         = ReactRouter.Route;
+    var RouteHandler  = ReactRouter.RouteHandler;
+    var DefaultRoute  = ReactRouter.DefaultRoute;
+    var NotFoundRoute = ReactRouter.NotFoundRoute;
+    var Redirect      = ReactRouter.Redirect;
+    var Link          = ReactRouter.Link;
 
     var App = React.createClass({
         render: function() {
@@ -18,8 +19,9 @@ require(["bus", "signin"], function(Bus, SignIn) {
 
     var routes = (
         <Route handler={App}>
-            <Route name="signin" handler={SignIn} />
-            <Redirect from="/" to="signin" />
+            <Route name="sign-in" handler={SignIn} />
+            <Redirect from="/" to="sign-in" />
+            <NotFoundRoute handler={NotFound}/>
         </Route>
     );
 

@@ -2,7 +2,7 @@ define(["bus"], function(Bus) {
     var SignIn = React.createClass({
         render: function() {
             return (
-                <div id="login">
+                <div className="my-screen-center">
                 <div className="row">
                 <div className="col-md-4 col-md-offset-4">
                 <div className="panel panel-default">
