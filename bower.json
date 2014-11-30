@@ -7,5 +7,7 @@
         "react": "*",
         "react-router": "*",
         "jeet": "*"
+    }, "devDependencies": {
+        "qunit": "*"
     }
 }
