@@ -27,7 +27,8 @@ gulp.task('serve', function () {
 
     connect.server({
         port: 3000,
-        root: 'public'
+        root: 'public',
+        fallback: 'public/index.html'
     });
 });
 

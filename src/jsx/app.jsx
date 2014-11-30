@@ -3,10 +3,16 @@ require(["bus", "login"], function(Bus, Login) {
     var Route        = ReactRouter.Route;
     var RouteHandler = ReactRouter.RouteHandler;
     var DefaultRoute = ReactRouter.DefaultRoute;
+    var Link         = ReactRouter.Link;
 
     var App = React.createClass({
         render: function() {
-            return (<RouteHandler/>);
+            return (
+                <div>
+                    <div><Link to="login">login</Link></div>
+                    <div><RouteHandler/></div>
+                </div>
+            );
         }
     });
 
@@ -17,7 +23,7 @@ require(["bus", "login"], function(Bus, Login) {
         </Route>
     );
 
-    ReactRouter.run(routes/*, Router.HistoryLocation*/, function (Handler) {
+    ReactRouter.run(routes, Router.HistoryLocation, function (Handler) {
         React.render(<Handler/>, document.body);
     });
 });
