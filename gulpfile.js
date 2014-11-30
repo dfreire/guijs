@@ -3,6 +3,7 @@ var gulp    = require('gulp'),
     watch   = require('gulp-watch'),
     react   = require('gulp-react'),
     cached  = require('gulp-cached'),
+    sass    = require('gulp-sass'),
     flo     = require('fb-flo'),
     fs      = require('fs');
 
@@ -37,9 +38,10 @@ gulp.task('html', function () {
         .pipe(gulp.dest('public'));
 });
 
-gulp.task('css', function () {
-    return gulp.src('src/**/*.css')
-        .pipe(gulp.dest('public'));
+gulp.task('scss', function () {
+    return gulp.src('src/scss/app.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('js', function () {
@@ -54,9 +56,9 @@ gulp.task('jsx', function () {
         .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('watch', ['html', 'css', 'js', 'jsx', 'serve'], function () {
+gulp.task('watch', ['html', 'scss', 'js', 'jsx', 'serve'], function () {
     gulp.watch("src/**/*.html", ['html']);
-    gulp.watch("src/**/*.css",  ['css']);
     gulp.watch("src/**/*.js",   ['js']);
+    gulp.watch("src/**/*.scss", ['scss']);
     gulp.watch("src/**/*.jsx",  ['jsx']);
 });

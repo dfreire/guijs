@@ -1,4 +1,4 @@
-require(["bus", "login"], function(Bus, Login) {
+require(["bus", "signin"], function(Bus, SignIn) {
     var Router       = ReactRouter;
     var Route        = ReactRouter.Route;
     var RouteHandler = ReactRouter.RouteHandler;
@@ -9,9 +9,8 @@ require(["bus", "login"], function(Bus, Login) {
     var App = React.createClass({
         render: function() {
             return (
-                <div>
-                    <div><Link to="login">login</Link></div>
-                    <div><RouteHandler/></div>
+                <div class="container">
+                    <RouteHandler/>
                 </div>
             );
         }
@@ -19,8 +18,8 @@ require(["bus", "login"], function(Bus, Login) {
 
     var routes = (
         <Route handler={App}>
-            <Route name="login" handler={Login} />
-            <Redirect from="/" to="login" />
+            <Route name="signin" handler={SignIn} />
+            <Redirect from="/" to="signin" />
         </Route>
     );
 

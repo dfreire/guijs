@@ -6,7 +6,9 @@
         "lodash": "*",
         "react": "*",
         "react-router": "*",
-        "bootstrap": "*"
+        "react-bootstrap": "*",
+        "bootstrap": "*",
+        "fontawesome": "*"
     }, "devDependencies": {
         "qunit": "*"
     }

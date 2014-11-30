@@ -8,6 +8,7 @@
         "gulp-connect": "*",
         "gulp-watch": "*",
         "gulp-cached": "*",
+        "gulp-sass": "*",
         "gulp-react": "*"
     }
 }
