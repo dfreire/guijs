@@ -1,4 +1,6 @@
 define(["bus"], function(Bus) {
+    var Link = ReactRouter.Link;
+
     var SignIn = React.createClass({
         render: function() {
             return (
@@ -16,7 +18,7 @@ define(["bus"], function(Bus) {
                                 <input type="email" className="form-control" id="usernameOrEmail" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <label for="password">Password <a href="/reset-password">(forgot password)</a></label>
+                                <label for="password">Password <Link to="reset-password">(forgot password)</Link></label>
                                 <input type="password" className="form-control" id="password" placeholder="" />
                             </div>
                             <a href="/dashboard" className="btn btn-primary"><i className="fa fa-sign-in">&nbsp;</i> Sign In</a>
