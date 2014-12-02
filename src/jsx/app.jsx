@@ -1,4 +1,4 @@
-require(["bus", "notfound", "signin", "resetpassword"], function(Bus, NotFound, SignIn, ResetPassword) {
+require(["bus", "notfound", "signin", "signup", "resetpassword"], function(Bus, NotFound, SignIn, SignUp, ResetPassword) {
     var Router        = ReactRouter;
     var Route         = ReactRouter.Route;
     var RouteHandler  = ReactRouter.RouteHandler;
@@ -20,6 +20,7 @@ require(["bus", "notfound", "signin", "resetpassword"], function(Bus, NotFound, 
     var routes = (
         <Route handler={App}>
             <Route name="sign-in" handler={SignIn} />
+            <Route name="sign-up" handler={SignUp} />
             <Route name="reset-password" handler={ResetPassword} />
             <Redirect from="/" to="sign-in" />
             <NotFoundRoute handler={NotFound}/>
