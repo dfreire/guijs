@@ -10,7 +10,7 @@ require(["bus", "notfound", "signin", "resetpassword"], function(Bus, NotFound, 
     var App = React.createClass({
         render: function() {
             return (
-                <div class="container">
+                <div className="container">
                     <RouteHandler/>
                 </div>
             );
