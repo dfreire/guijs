@@ -8,8 +8,20 @@ define([], function() {
                 <div className="row">
                 <div className="col-md-4 col-md-offset-4">
 
-                    <h1 className="text-center">Reset Password</h1>
-                    <p className="text-center"><Link to="sign-in">sign in</Link></p>
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h3 className="panel-title">Forgot Password</h3>
+                    </div>
+                    <div className="panel-body">
+                        <form role="form">
+                            <div className="form-group">
+                                <label>Email</label>
+                                <input type="email" className="form-control" id="email" placeholder="" />
+                            </div>
+                            <Link to="sign-in" className="btn btn-primary"><i className="fa fa-send">&nbsp;</i> Send New Password</Link>
+                        </form>
+                    </div>
+                </div>
 
                 </div>
                 </div>
