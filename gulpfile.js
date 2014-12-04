@@ -1,5 +1,4 @@
 var gulp    = require('gulp'),
-    connect = require('gulp-connect'),
     watch   = require('gulp-watch'),
     react   = require('gulp-react'),
     cached  = require('gulp-cached'),
@@ -25,12 +24,6 @@ gulp.task('serve', function () {
             contents: fs.readFileSync(fpath).toString()
         });
     }
-
-    connect.server({
-        port: 3000,
-        root: 'public',
-        fallback: 'public/index.html'
-    });
 });
 
 gulp.task('html', function () {
