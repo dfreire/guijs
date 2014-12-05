@@ -22,7 +22,13 @@ define(["bus"], function(Bus) {
                                 <label>Password <Link to="reset-password">(forgot password)</Link></label>
                                 <input type="password" className="form-control" id="password" placeholder="" />
                             </div>
-                            <a href="/dashboard" className="btn btn-primary"><i className="fa fa-sign-in">&nbsp;</i> Sign In</a> or <Link to="sign-up">Sign Up</Link>
+                            <div className="form-group">
+                                <a href="/dashboard" className="btn btn-primary btn-block">Sign In</a>
+                            </div>
+                            <p className="text-center">or</p>
+                            <div className="form-group">
+                                <Link to="sign-up"className="btn btn-default btn-block">Sign Up</Link>
+                            </div>
                         </form>
                     </div>
                 </div>
