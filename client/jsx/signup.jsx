@@ -30,7 +30,7 @@ define(["bus"], function(Bus) {
                                 <input type="checkbox" /> I agree to <a href="/terms">Terms</a>
                             </div>
                             <div className="form-group">
-                                <a href="/sign-in" className="btn btn-primary btn-block">Sign Up</a>
+                                <a href="/sign-up" className="btn btn-primary btn-block">Sign Up</a>
                             </div>
                             <div className="form-group">
                                 <p className="text-center">or</p>
