@@ -31,7 +31,13 @@ define(["bus"], function(Bus) {
                                     <input type="checkbox" /> I agree to <a href="/terms">Terms</a>
                                 </p>
                             </div>
-                            <a href="/sign-in" className="btn btn-success"><i className="fa fa-check">&nbsp;</i> Sign Up</a> or <Link to="sign-in">Sign In</Link>
+                            <div className="form-group">
+                                <a href="/sign-in" className="btn btn-primary btn-block">Sign Up</a>
+                            </div>
+                            <p className="text-center">or</p>
+                            <div className="form-group">
+                                <Link to="sign-in" className="btn btn-default btn-block">Sign In</Link>
+                            </div>
                         </form>
                     </div>
                 </div>

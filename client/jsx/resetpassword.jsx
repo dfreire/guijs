@@ -18,7 +18,9 @@ define([], function() {
                                 <label>Email</label>
                                 <input type="email" className="form-control" id="email" placeholder="" />
                             </div>
-                            <Link to="sign-in" className="btn btn-primary"><i className="fa fa-send">&nbsp;</i> Send New Password</Link>
+                            <div className="form-group">
+                                <Link to="sign-in" className="btn btn-primary btn-block">Reset Password</Link>
+                            </div>
                         </form>
                     </div>
                 </div>
