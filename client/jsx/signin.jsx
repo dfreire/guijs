@@ -23,7 +23,7 @@ define(["bus"], function(Bus) {
                                 <input type="password" className="form-control" id="password" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <a href="/dashboard" className="btn btn-primary btn-block">Sign In</a>
+                                <a href="/sign-in" className="btn btn-primary btn-block">Sign In</a>
                             </div>
                             <div className="form-group">
                                 <p className="text-center">or</p>

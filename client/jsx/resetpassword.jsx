@@ -19,7 +19,7 @@ define([], function() {
                                 <input type="email" className="form-control" id="email" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <Link to="sign-in" className="btn btn-primary btn-block">Reset Password</Link>
+                                <a href="/reset-password" className="btn btn-primary btn-block">Reset Password</a>
                             </div>
                         </form>
                     </div>
