@@ -25,7 +25,9 @@ define(["bus"], function(Bus) {
                             <div className="form-group">
                                 <a href="/dashboard" className="btn btn-primary btn-block">Sign In</a>
                             </div>
-                            <p className="text-center">or</p>
+                            <div className="form-group">
+                                <p className="text-center">or</p>
+                            </div>
                             <div className="form-group">
                                 <Link to="sign-up"className="btn btn-default btn-block">Sign Up</Link>
                             </div>

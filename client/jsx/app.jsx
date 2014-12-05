@@ -27,7 +27,7 @@ require(["bus", "notfound", "signin", "signup", "resetpassword"], function(Bus, 
         </Route>
     );
 
-    ReactRouter.run(routes, Router.HistoryLocation, function (Handler) {
+    ReactRouter.run(routes/*, Router.HistoryLocation*/, function (Handler) {
         React.render(<Handler/>, document.body);
     });
 });

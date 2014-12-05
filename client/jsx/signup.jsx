@@ -26,15 +26,15 @@ define(["bus"], function(Bus) {
                                 <label>Password</label>
                                 <input type="password" className="form-control" id="password" placeholder="" />
                             </div>
-                            <div class="checkbox">
-                                <p>
-                                    <input type="checkbox" /> I agree to <a href="/terms">Terms</a>
-                                </p>
+                            <div className="form-group">
+                                <input type="checkbox" /> I agree to <a href="/terms">Terms</a>
                             </div>
                             <div className="form-group">
                                 <a href="/sign-in" className="btn btn-primary btn-block">Sign Up</a>
                             </div>
-                            <p className="text-center">or</p>
+                            <div className="form-group">
+                                <p className="text-center">or</p>
+                            </div>
                             <div className="form-group">
                                 <Link to="sign-in" className="btn btn-default btn-block">Sign In</Link>
                             </div>
