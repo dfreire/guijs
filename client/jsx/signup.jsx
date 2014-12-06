@@ -15,19 +15,19 @@ define(["bus"], function(Bus) {
                     <div className="panel-body">
                         <form role="form">
                             <div className="form-group">
-                                <label>Username</label>
+                                <label>Pick a username</label>
                                 <input type="text" className="form-control" id="username" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <label>Email</label>
+                                <label>Your email</label>
                                 <input type="email" className="form-control" id="email" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <label>Password</label>
+                                <label>Create a password</label>
                                 <input type="password" className="form-control" id="password" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <input type="checkbox" /> I agree to <a href="/terms">Terms</a>
+                                <p className="text-justify">By clicking on <b>Sign up</b> below, you are agreeing to our <a href="/terms-of-service">terms of service</a> and <a href="/privacy-policy">privacy policy</a>.  We will send you related emails occasionally.</p>
                             </div>
                             <div className="form-group">
                                 <a href="/sign-up" className="btn btn-primary btn-block">Sign Up</a>
