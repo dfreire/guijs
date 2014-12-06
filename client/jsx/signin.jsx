@@ -2,6 +2,10 @@ define(["bus"], function(Bus) {
     var Link = ReactRouter.Link;
 
     var SignIn = React.createClass({
+        getInitialState: function() {
+            console.log("signin getInitialState")
+            return {};
+        },
         render: function() {
             return (
                 <div className="my-screen-center">

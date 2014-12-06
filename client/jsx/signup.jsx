@@ -2,6 +2,9 @@ define(["bus"], function(Bus) {
     var Link = ReactRouter.Link;
 
     var SignUp = React.createClass({
+        onClickedSignUp: function(evt) {
+            console.log("onClickedSignUp");
+        },
         render: function() {
             return (
                 <div className="my-screen-center">
@@ -30,7 +33,7 @@ define(["bus"], function(Bus) {
                                 <p className="text-justify">By clicking on <b>Sign up</b> below, you are agreeing to our <a href="/terms-of-service">terms of service</a> and <a href="/privacy-policy">privacy policy</a>.  We will send you related emails occasionally.</p>
                             </div>
                             <div className="form-group">
-                                <a href="/sign-up" className="btn btn-primary btn-block">Sign Up</a>
+                                <button className="btn btn-primary btn-block" onClick={this.onClickedSignUp}>Sign Up</button>
                             </div>
                             <div className="form-group">
                                 <p className="text-center">or</p>
