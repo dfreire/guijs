@@ -45,12 +45,10 @@ func SignUpHandler(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	js, err := json.Marshal(params)
+	res.Header().Set("Content-Type", "application/json")
+	err = json.NewEncoder(res).Encode(params)
 	if err != nil {
 		http.Error(res, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
-	res.Header().Set("Content-Type", "application/json")
-	res.Write(js)
 }
