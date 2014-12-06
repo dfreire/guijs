@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"github.com/codegangsta/negroni"
 	"github.com/gorilla/pat"
 	"log"
@@ -17,5 +18,10 @@ func main() {
 }
 
 func SignUpHandler(res http.ResponseWriter, req *http.Request) {
-	log.Println("++++", req)
+	params := make(map[string]interface{})
+	err := json.NewDecoder(req.Body).Decode(&params)
+	if err != nil {
+		log.Panic(err)
+	}
+	log.Println("++++", params)
 }

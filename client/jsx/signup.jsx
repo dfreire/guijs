@@ -10,8 +10,8 @@ define(["bus"], function(Bus) {
                 password:  this.refs.password.getDOMNode().value.trim()
             };
             console.log("onClickedSignUp", data);
-            $.post("/sign-up", data, function(data, textStatus, jqXHR) {
-                console.log("response", data, textStatus, jqXHR);
+            $.post("/sign-up", JSON.stringify(data), function(data, textStatus, jqXHR) {
+                console.log("response", data, textStatus, jqXHR.status);
             });
         },
         render: function() {
