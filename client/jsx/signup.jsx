@@ -27,19 +27,19 @@ define(["bus"], function(Bus) {
                     <div className="panel-body">
                         <form role="form">
                             <div className="form-group">
-                                <label>Pick a username</label>
+                                <label>Username</label>
                                 <input type="text" className="form-control" ref="username" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <label>Your email</label>
+                                <label>Email</label>
                                 <input type="email" className="form-control" ref="email" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <label>Create a password</label>
+                                <label>Password</label>
                                 <input type="password" className="form-control" ref="password" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <p className="text-justify">By clicking on <b>Sign up</b> below, you are agreeing to our <a href="/terms-of-service">terms of service</a> and <a href="/privacy-policy">privacy policy</a>. We will send you related emails occasionally.</p>
+                                <p className="text-justify">By signing up you are agreeing to our <a href="/terms-of-service">terms of service</a> and <a href="/privacy-policy">privacy policy</a>.</p>
                             </div>
                             <div className="form-group">
                                 <button className="btn btn-primary btn-block" onClick={this.onClickedSignUp}>Sign Up</button>

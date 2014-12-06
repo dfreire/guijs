@@ -15,12 +15,12 @@ define(["bus"], function(Bus) {
                     <div className="panel-body">
                         <form role="form">
                             <div className="form-group">
-                                <label>Username or Email</label>
-                                <input type="email" className="form-control" id="usernameOrEmail" placeholder="" />
+                                <label>Email</label>
+                                <input type="email" className="form-control" ref="email" placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label>Password <Link to="reset-password">(forgot password)</Link></label>
-                                <input type="password" className="form-control" id="password" placeholder="" />
+                                <input type="password" className="form-control" ref="password" placeholder="" />
                             </div>
                             <div className="form-group">
                                 <a href="/sign-in" className="btn btn-primary btn-block">Sign In</a>
