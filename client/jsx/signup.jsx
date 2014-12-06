@@ -3,7 +3,16 @@ define(["bus"], function(Bus) {
 
     var SignUp = React.createClass({
         onClickedSignUp: function(evt) {
-            console.log("onClickedSignUp");
+            evt.preventDefault();
+            var data = {
+                username:  this.refs.username.getDOMNode().value.trim(),
+                email:     this.refs.email.getDOMNode().value.trim(),
+                password:  this.refs.password.getDOMNode().value.trim()
+            };
+            console.log("onClickedSignUp", data);
+            $.post("/sign-up", data, function(data, textStatus, jqXHR) {
+                console.log("response", data, textStatus, jqXHR);
+            });
         },
         render: function() {
             return (
@@ -19,18 +28,18 @@ define(["bus"], function(Bus) {
                         <form role="form">
                             <div className="form-group">
                                 <label>Pick a username</label>
-                                <input type="text" className="form-control" id="username" placeholder="" />
+                                <input type="text" className="form-control" ref="username" placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label>Your email</label>
-                                <input type="email" className="form-control" id="email" placeholder="" />
+                                <input type="email" className="form-control" ref="email" placeholder="" />
                             </div>
                             <div className="form-group">
                                 <label>Create a password</label>
-                                <input type="password" className="form-control" id="password" placeholder="" />
+                                <input type="password" className="form-control" ref="password" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <p className="text-justify">By clicking on <b>Sign up</b> below, you are agreeing to our <a href="/terms-of-service">terms of service</a> and <a href="/privacy-policy">privacy policy</a>.  We will send you related emails occasionally.</p>
+                                <p className="text-justify">By clicking on <b>Sign up</b> below, you are agreeing to our <a href="/terms-of-service">terms of service</a> and <a href="/privacy-policy">privacy policy</a>. We will send you related emails occasionally.</p>
                             </div>
                             <div className="form-group">
                                 <button className="btn btn-primary btn-block" onClick={this.onClickedSignUp}>Sign Up</button>
