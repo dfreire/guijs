@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/go-martini/martini"
+	"github.com/codegangsta/negroni"
+	//"net/http"
 )
 
 func main() {
-	m := martini.Classic()
-	m.Run()
+	n := negroni.Classic()
+	n.Run(":3000")
 }
