@@ -21,21 +21,26 @@ func main() {
 	defer es.MustDestroy()
 	ss := snapshot.NewLeveldbStore()
 	defer ss.MustDestroy()
-	authService := auth.NewAuthService(es, ss)
+
+	hs := &handlers{authService: auth.NewAuthService(es, ss)}
 
 	router := pat.New()
-	router.Get("/", IndexHandler)
-	router.Get("/sign-up", IndexHandler)
-	router.Get("/sign-in", IndexHandler)
-	router.Get("/reset-password", IndexHandler)
-	router.Post("/sign-up", SignUpHandler)
+	router.Get("/", hs.IndexHandler)
+	router.Get("/sign-up", hs.IndexHandler)
+	router.Get("/sign-in", hs.IndexHandler)
+	router.Get("/reset-password", hs.IndexHandler)
+	router.Post("/sign-up", hs.SignUpHandler)
 
 	n := negroni.Classic()
 	n.UseHandler(router)
 	n.Run(":3001")
 }
 
-func IndexHandler(res http.ResponseWriter, req *http.Request) {
+type handlers struct {
+	authService auth.AuthService
+}
+
+func (self *handlers) IndexHandler(res http.ResponseWriter, req *http.Request) {
 	fp := path.Join("templates", "index.html")
 	tmpl, err := template.ParseFiles(fp)
 	if err != nil {
@@ -48,7 +53,7 @@ func IndexHandler(res http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func SignUpHandler(res http.ResponseWriter, req *http.Request) {
+func (self *handlers) SignUpHandler(res http.ResponseWriter, req *http.Request) {
 	params := make(map[string]interface{})
 	err := json.NewDecoder(req.Body).Decode(&params)
 	if err != nil {
@@ -58,7 +63,7 @@ func SignUpHandler(res http.ResponseWriter, req *http.Request) {
 
 	email := params["email"].(string)
 	password := params["password"].(string)
-	verificationToken, err := authService.SignUp("guijs", email, password)
+	_, err = self.authService.SignUp("guijs", email, password)
 	if err != nil {
 		http.Error(res, err.Error(), http.StatusInternalServerError)
 		return

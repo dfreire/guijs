@@ -4,3 +4,8 @@ bower_components/
 node_modules/
 public/
 gin-bin
+test.toml
+development.toml
+production.toml
+test-event-store/
+test-snapshot-store/
