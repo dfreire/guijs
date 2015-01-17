@@ -5,7 +5,6 @@ define(["bus"], function(Bus) {
         onClickedSignUp: function(evt) {
             evt.preventDefault();
             var data = {
-                username:  this.refs.username.getDOMNode().value.trim(),
                 email:     this.refs.email.getDOMNode().value.trim(),
                 password:  this.refs.password.getDOMNode().value.trim()
             };
@@ -26,10 +25,6 @@ define(["bus"], function(Bus) {
                     </div>
                     <div className="panel-body">
                         <form role="form">
-                            <div className="form-group">
-                                <label>Username</label>
-                                <input type="text" className="form-control" ref="username" placeholder="" />
-                            </div>
                             <div className="form-group">
                                 <label>Email</label>
                                 <input type="email" className="form-control" ref="email" placeholder="" />
