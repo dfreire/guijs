@@ -9,9 +9,11 @@ import (
 
 	"github.com/codegangsta/negroni"
 	"github.com/gorilla/pat"
+	"github.com/jordan-wright/email"
 	"github.com/puffinframework/auth"
 	"github.com/puffinframework/config"
 	"github.com/puffinframework/event"
+	"github.com/puffinframework/mail"
 	"github.com/puffinframework/snapshot"
 )
 
@@ -22,7 +24,10 @@ func main() {
 	ss := snapshot.NewLeveldbStore()
 	defer ss.MustDestroy()
 
-	hs := &handlers{authService: auth.NewAuthService(es, ss)}
+	hs := &handlers{
+		mailService: mail.NewMailService(),
+		authService: auth.NewAuthService(es, ss),
+	}
 
 	router := pat.New()
 	router.Get("/", hs.IndexHandler)
@@ -37,6 +42,7 @@ func main() {
 }
 
 type handlers struct {
+	mailService mail.MailService
 	authService auth.AuthService
 }
 
@@ -61,16 +67,28 @@ func (self *handlers) SignUpHandler(res http.ResponseWriter, req *http.Request) 
 		return
 	}
 
-	email := params["email"].(string)
-	password := params["password"].(string)
-	_, err = self.authService.SignUp("guijs", email, password)
+	paramEmail := params["email"].(string)
+	paramPassword := params["password"].(string)
+
+	verificationToken, err := self.authService.SignUp("guijs", paramEmail, paramPassword)
 	if err != nil {
 		http.Error(res, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
+	e := email.NewEmail()
+	e.From = "puffinframework@mailinator.com"
+	e.To = []string{paramEmail}
+	e.Subject = "Welcome to PuffinFramework"
+	e.HTML = []byte(verificationToken)
+
+	if err := self.mailService.Send(e); err != nil {
+		http.Error(res, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	res.Header().Set("Content-Type", "application/json")
-	err = json.NewEncoder(res).Encode(params)
+	err = json.NewEncoder(res).Encode(verificationToken)
 	if err != nil {
 		http.Error(res, err.Error(), http.StatusInternalServerError)
 		return
