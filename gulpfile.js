@@ -49,9 +49,12 @@ gulp.task('jsx', function () {
         .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('watch', ['html', 'scss', 'js', 'jsx', 'serve'], function () {
+gulp.task('watch', ['html', 'scss', 'js', 'jsx'/*, 'serve'*/], function () {
     gulp.watch("client/**/*.html", ['html']);
     gulp.watch("client/**/*.js",   ['js']);
     gulp.watch("client/**/*.scss", ['scss']);
     gulp.watch("client/**/*.jsx",  ['jsx']);
+});
+
+gulp.task('default', ['html', 'scss', 'js', 'jsx'], function () {
 });

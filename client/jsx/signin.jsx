@@ -2,6 +2,10 @@ define(["bus"], function(Bus) {
     var Link = ReactRouter.Link;
 
     var SignIn = React.createClass({
+        handleSignIn: function(e) {
+            e.preventDefault();
+            console.warn("state:", this.state);
+        },
         render: function() {
             return (
                 <div className="my-screen-center">
@@ -13,7 +17,7 @@ define(["bus"], function(Bus) {
                         <h3 className="panel-title">Sign In</h3>
                     </div>
                     <div className="panel-body">
-                        <form role="form">
+                        <form role="form" onSubmit={this.handleSignIn}>
                             <div className="form-group">
                                 <label>Email</label>
                                 <input type="email" className="form-control" ref="email" placeholder="" />
@@ -23,7 +27,7 @@ define(["bus"], function(Bus) {
                                 <input type="password" className="form-control" ref="password" placeholder="" />
                             </div>
                             <div className="form-group">
-                                <a href="/sign-in" className="btn btn-primary btn-block">Sign In</a>
+                                <button href="/sign-in" className="btn btn-primary btn-block">Sign In 2</button>
                             </div>
                             <div className="form-group">
                                 <p className="text-center">or</p>
